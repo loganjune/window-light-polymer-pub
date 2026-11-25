@@ -1,0 +1,606 @@
+{
+  "claim_boundary": "PALS local cavity diameter is a structural proxy. A size-line crossing does not establish a connected path, diffusion, partitioning, migrated mass, leaching, or safety.",
+  "curves": {
+    "thermoplastic:polycaprolactone": {
+      "available_series": [
+        {
+          "label": "PCU linear PU (polycaprolactone/MDI/BDO)",
+          "observations": 2,
+          "series_id": "ning2001::PCU linear PU (polycaprolactone/MDI/BDO)",
+          "source_id": "ning2001"
+        }
+      ],
+      "curve_key": "thermoplastic:polycaprolactone",
+      "excluded_observations_from_live_interpolation": 0,
+      "extrapolation": "disabled",
+      "family": "polycaprolactone",
+      "interpolation": "piecewise linear between literature observations",
+      "label": "PCU linear PU (polycaprolactone/MDI/BDO)",
+      "label_kind": "PALS spherical-equivalent cavity diameter proxy",
+      "pals_reliability_limit_k": null,
+      "points": [
+        {
+          "diameter_a": 3.94,
+          "diameter_uncertainty_a": null,
+          "extraction_kind": "reported_text",
+          "record_id": "ning2001-pcu-radius-140k",
+          "temperature_k": 140.0
+        },
+        {
+          "diameter_a": 6.6,
+          "diameter_uncertainty_a": null,
+          "extraction_kind": "reported_text",
+          "record_id": "ning2001-pcu-radius-350k",
+          "temperature_k": 350.0
+        }
+      ],
+      "selection_reason": "most temperature-resolved matched series; chemistries are not pooled",
+      "series_id": "ning2001::PCU linear PU (polycaprolactone/MDI/BDO)",
+      "sources": [
+        {
+          "citation": "C. Ning et al., Micro-structure and free volume properties of linear polyurethanes measured by using positron annihilation spectroscopy, Acta Polymerica Sinica 3 (2001) 299-304.",
+          "doi": null,
+          "source_id": "ning2001",
+          "url": "https://www.gfzxb.org/rc-pub/front/front-article/download/7072922/lowqualitypdf/%E7%94%A8%E6%AD%A3%E7%94%B5%E5%AD%90%E6%B9%AE%E6%B2%A1%E8%B0%B1%E7%A0%94%E7%A9%B6%E8%81%9A%E9%85%AF%E5%9E%8B%E8%81%9A%E6%B0%A8%E9%85%AF%E7%9A%84%E5%BE%AE%E8%A7%82%E7%BB%93%E6%9E%84%E5%92%8C%E8%87%AA%E7%94%B1%E4%BD%93%E7%A7%AF%E7%89%B9%E6%80%A7.pdf"
+        }
+      ],
+      "temperature_range_k": [
+        140.0,
+        350.0
+      ],
+      "tg_k": 195.0,
+      "topology": "thermoplastic"
+    },
+    "thermoplastic:polyester": {
+      "available_series": [
+        {
+          "label": "Amorphous PBA/MDI/BDO thermoplastic polyurethane",
+          "observations": 17,
+          "series_id": "consolati2016::Amorphous PBA/MDI/BDO thermoplastic polyurethane",
+          "source_id": "consolati2016"
+        },
+        {
+          "label": "PBU linear PU (polybutylene adipate/MDI/BDO)",
+          "observations": 2,
+          "series_id": "ning2001::PBU linear PU (polybutylene adipate/MDI/BDO)",
+          "source_id": "ning2001"
+        }
+      ],
+      "curve_key": "thermoplastic:polyester",
+      "excluded_observations_from_live_interpolation": 4,
+      "extrapolation": "disabled",
+      "family": "polyester",
+      "interpolation": "piecewise linear between literature observations",
+      "label": "Amorphous PBA/MDI/BDO thermoplastic polyurethane",
+      "label_kind": "PALS spherical-equivalent cavity diameter proxy",
+      "pals_reliability_limit_k": 300.0,
+      "points": [
+        {
+          "diameter_a": 4.117,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.2695,
+          "record_id": "consolati2016-pba-tpu-lifetime-200k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 200.0
+        },
+        {
+          "diameter_a": 4.169,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.2891,
+          "record_id": "consolati2016-pba-tpu-lifetime-208k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 208.0
+        },
+        {
+          "diameter_a": 4.219,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.3086,
+          "record_id": "consolati2016-pba-tpu-lifetime-216k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 216.0
+        },
+        {
+          "diameter_a": 4.273,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.3294,
+          "record_id": "consolati2016-pba-tpu-lifetime-224k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 224.0
+        },
+        {
+          "diameter_a": 4.399,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.3794,
+          "record_id": "consolati2016-pba-tpu-lifetime-232k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 232.0
+        },
+        {
+          "diameter_a": 4.494,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.4185,
+          "record_id": "consolati2016-pba-tpu-lifetime-240k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 240.0
+        },
+        {
+          "diameter_a": 4.639,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.4795,
+          "record_id": "consolati2016-pba-tpu-lifetime-248k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 248.0
+        },
+        {
+          "diameter_a": 4.754,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.5296,
+          "record_id": "consolati2016-pba-tpu-lifetime-256k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 256.0
+        },
+        {
+          "diameter_a": 4.955,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.62,
+          "record_id": "consolati2016-pba-tpu-lifetime-264k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 264.0
+        },
+        {
+          "diameter_a": 5.106,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.6908,
+          "record_id": "consolati2016-pba-tpu-lifetime-272k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 272.0
+        },
+        {
+          "diameter_a": 5.308,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.7897,
+          "record_id": "consolati2016-pba-tpu-lifetime-280k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 280.0
+        },
+        {
+          "diameter_a": 5.485,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.88,
+          "record_id": "consolati2016-pba-tpu-lifetime-288k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 288.0
+        },
+        {
+          "diameter_a": 5.674,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.9802,
+          "record_id": "consolati2016-pba-tpu-lifetime-296k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 296.0
+        }
+      ],
+      "selection_reason": "most temperature-resolved matched series; chemistries are not pooled",
+      "series_id": "consolati2016::Amorphous PBA/MDI/BDO thermoplastic polyurethane",
+      "sources": [
+        {
+          "citation": "G. Consolati, D. Nichetti, F. Quasso, Constraints and Thermal Expansion of the Free Volume in a Micro-Phase Separated Poly(ester-Adipate)urethane, Journal of Polymer Science Part B: Polymer Physics 54 (2016) 2104-2109.",
+          "doi": "10.1002/polb.24119",
+          "source_id": "consolati2016",
+          "url": "https://re.public.polimi.it/bitstream/11311/999232/4/CONSG_OA_01-16.pdf"
+        }
+      ],
+      "temperature_range_k": [
+        200.0,
+        296.0
+      ],
+      "tg_k": 244.0,
+      "topology": "thermoplastic"
+    },
+    "thermoset:polyether": {
+      "available_series": [
+        {
+          "label": "Crosslinked PPO tri-isocyanate PU extended with 5 wt% PCL diol",
+          "observations": 3,
+          "series_id": "marques2008::Crosslinked PPO tri-isocyanate PU extended with 5 wt% PCL diol",
+          "source_id": "marques2008"
+        }
+      ],
+      "curve_key": "thermoset:polyether",
+      "excluded_observations_from_live_interpolation": 0,
+      "extrapolation": "disabled",
+      "family": "polyether",
+      "interpolation": "piecewise linear between literature observations",
+      "label": "Crosslinked PPO tri-isocyanate PU extended with 5 wt% PCL diol",
+      "label_kind": "PALS spherical-equivalent cavity diameter proxy",
+      "pals_reliability_limit_k": null,
+      "points": [
+        {
+          "diameter_a": 7.26,
+          "diameter_uncertainty_a": 0.08,
+          "extraction_kind": "figure_digitized",
+          "record_id": "marques2008-ppo-pcl05-r4-298k",
+          "temperature_k": 298.0
+        },
+        {
+          "diameter_a": 7.44,
+          "diameter_uncertainty_a": 0.08,
+          "extraction_kind": "figure_digitized",
+          "record_id": "marques2008-ppo-pcl05-r4-310k",
+          "temperature_k": 310.0
+        },
+        {
+          "diameter_a": 7.54,
+          "diameter_uncertainty_a": 0.08,
+          "extraction_kind": "figure_digitized",
+          "record_id": "marques2008-ppo-pcl05-r4-324k",
+          "temperature_k": 324.0
+        }
+      ],
+      "selection_reason": "most temperature-resolved matched series; chemistries are not pooled",
+      "series_id": "marques2008::Crosslinked PPO tri-isocyanate PU extended with 5 wt% PCL diol",
+      "sources": [
+        {
+          "citation": "M.F. Ferreira Marques et al., Free-Volume Studies in Polycaprolactone/Poly(propylene oxide) Urethane/Urea Membranes by Positron Lifetime Spectroscopy, Acta Physica Polonica A 113 (2008) 1359-1364.",
+          "doi": null,
+          "source_id": "marques2008",
+          "url": "https://bibliotekanauki.pl/articles/1812490.pdf"
+        }
+      ],
+      "temperature_range_k": [
+        298.0,
+        324.0
+      ],
+      "tg_k": null,
+      "topology": "thermoset"
+    }
+  },
+  "data": {
+    "curated_records_scanned": 48,
+    "curves": 3,
+    "independent_polymer_series": 4,
+    "independent_surrogate_sources": 3,
+    "numeric_surrogate_points": 24,
+    "proxy_points": 18
+  },
+  "evidence_series": [
+    {
+      "curve_key": "thermoplastic:polycaprolactone",
+      "extrapolation": "disabled",
+      "family": "polycaprolactone",
+      "interpolation": "piecewise linear between literature observations",
+      "is_live_default": true,
+      "label": "PCU linear PU (polycaprolactone/MDI/BDO)",
+      "label_kind": "PALS spherical-equivalent cavity diameter proxy",
+      "pals_reliability_limit_k": null,
+      "points": [
+        {
+          "diameter_a": 3.94,
+          "diameter_uncertainty_a": null,
+          "extraction_kind": "reported_text",
+          "record_id": "ning2001-pcu-radius-140k",
+          "temperature_k": 140.0
+        },
+        {
+          "diameter_a": 6.6,
+          "diameter_uncertainty_a": null,
+          "extraction_kind": "reported_text",
+          "record_id": "ning2001-pcu-radius-350k",
+          "temperature_k": 350.0
+        }
+      ],
+      "series_id": "ning2001::PCU linear PU (polycaprolactone/MDI/BDO)",
+      "sources": [
+        {
+          "citation": "C. Ning et al., Micro-structure and free volume properties of linear polyurethanes measured by using positron annihilation spectroscopy, Acta Polymerica Sinica 3 (2001) 299-304.",
+          "doi": null,
+          "source_id": "ning2001",
+          "url": "https://www.gfzxb.org/rc-pub/front/front-article/download/7072922/lowqualitypdf/%E7%94%A8%E6%AD%A3%E7%94%B5%E5%AD%90%E6%B9%AE%E6%B2%A1%E8%B0%B1%E7%A0%94%E7%A9%B6%E8%81%9A%E9%85%AF%E5%9E%8B%E8%81%9A%E6%B0%A8%E9%85%AF%E7%9A%84%E5%BE%AE%E8%A7%82%E7%BB%93%E6%9E%84%E5%92%8C%E8%87%AA%E7%94%B1%E4%BD%93%E7%A7%AF%E7%89%B9%E6%80%A7.pdf"
+        }
+      ],
+      "temperature_range_k": [
+        140.0,
+        350.0
+      ],
+      "tg_k": 195.0,
+      "topology": "thermoplastic"
+    },
+    {
+      "curve_key": "thermoplastic:polyester",
+      "extrapolation": "disabled",
+      "family": "polyester",
+      "interpolation": "piecewise linear between literature observations",
+      "is_live_default": true,
+      "label": "Amorphous PBA/MDI/BDO thermoplastic polyurethane",
+      "label_kind": "PALS spherical-equivalent cavity diameter proxy",
+      "pals_reliability_limit_k": 300.0,
+      "points": [
+        {
+          "diameter_a": 4.117,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.2695,
+          "record_id": "consolati2016-pba-tpu-lifetime-200k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 200.0
+        },
+        {
+          "diameter_a": 4.169,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.2891,
+          "record_id": "consolati2016-pba-tpu-lifetime-208k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 208.0
+        },
+        {
+          "diameter_a": 4.219,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.3086,
+          "record_id": "consolati2016-pba-tpu-lifetime-216k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 216.0
+        },
+        {
+          "diameter_a": 4.273,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.3294,
+          "record_id": "consolati2016-pba-tpu-lifetime-224k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 224.0
+        },
+        {
+          "diameter_a": 4.399,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.3794,
+          "record_id": "consolati2016-pba-tpu-lifetime-232k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 232.0
+        },
+        {
+          "diameter_a": 4.494,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.4185,
+          "record_id": "consolati2016-pba-tpu-lifetime-240k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 240.0
+        },
+        {
+          "diameter_a": 4.639,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.4795,
+          "record_id": "consolati2016-pba-tpu-lifetime-248k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 248.0
+        },
+        {
+          "diameter_a": 4.754,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.5296,
+          "record_id": "consolati2016-pba-tpu-lifetime-256k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 256.0
+        },
+        {
+          "diameter_a": 4.955,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.62,
+          "record_id": "consolati2016-pba-tpu-lifetime-264k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 264.0
+        },
+        {
+          "diameter_a": 5.106,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.6908,
+          "record_id": "consolati2016-pba-tpu-lifetime-272k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 272.0
+        },
+        {
+          "diameter_a": 5.308,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.7897,
+          "record_id": "consolati2016-pba-tpu-lifetime-280k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 280.0
+        },
+        {
+          "diameter_a": 5.485,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.88,
+          "record_id": "consolati2016-pba-tpu-lifetime-288k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 288.0
+        },
+        {
+          "diameter_a": 5.674,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 1.9802,
+          "record_id": "consolati2016-pba-tpu-lifetime-296k",
+          "reliability": "within_author_recommended_range",
+          "temperature_k": 296.0
+        },
+        {
+          "diameter_a": 5.748,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 2.0205,
+          "record_id": "consolati2016-pba-tpu-lifetime-304k",
+          "reliability": "author_caution_above_limit",
+          "temperature_k": 304.0
+        },
+        {
+          "diameter_a": 5.873,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 2.09,
+          "record_id": "consolati2016-pba-tpu-lifetime-312k",
+          "reliability": "author_caution_above_limit",
+          "temperature_k": 312.0
+        },
+        {
+          "diameter_a": 5.98,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 2.1511,
+          "record_id": "consolati2016-pba-tpu-lifetime-320k",
+          "reliability": "author_caution_above_limit",
+          "temperature_k": 320.0
+        },
+        {
+          "diameter_a": 6.083,
+          "diameter_uncertainty_a": 0.04,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 2.2109,
+          "record_id": "consolati2016-pba-tpu-lifetime-328k",
+          "reliability": "author_caution_above_limit",
+          "temperature_k": 328.0
+        }
+      ],
+      "series_id": "consolati2016::Amorphous PBA/MDI/BDO thermoplastic polyurethane",
+      "sources": [
+        {
+          "citation": "G. Consolati, D. Nichetti, F. Quasso, Constraints and Thermal Expansion of the Free Volume in a Micro-Phase Separated Poly(ester-Adipate)urethane, Journal of Polymer Science Part B: Polymer Physics 54 (2016) 2104-2109.",
+          "doi": "10.1002/polb.24119",
+          "source_id": "consolati2016",
+          "url": "https://re.public.polimi.it/bitstream/11311/999232/4/CONSG_OA_01-16.pdf"
+        }
+      ],
+      "temperature_range_k": [
+        200.0,
+        328.0
+      ],
+      "tg_k": 244.0,
+      "topology": "thermoplastic"
+    },
+    {
+      "curve_key": "thermoplastic:polyester",
+      "extrapolation": "disabled",
+      "family": "polyester",
+      "interpolation": "piecewise linear between literature observations",
+      "is_live_default": false,
+      "label": "PBU linear PU (polybutylene adipate/MDI/BDO)",
+      "label_kind": "PALS spherical-equivalent cavity diameter proxy",
+      "pals_reliability_limit_k": null,
+      "points": [
+        {
+          "diameter_a": 3.84,
+          "diameter_uncertainty_a": null,
+          "extraction_kind": "reported_text",
+          "record_id": "ning2001-pbu-radius-140k",
+          "temperature_k": 140.0
+        },
+        {
+          "diameter_a": 6.38,
+          "diameter_uncertainty_a": null,
+          "extraction_kind": "reported_text",
+          "record_id": "ning2001-pbu-radius-350k",
+          "temperature_k": 350.0
+        }
+      ],
+      "series_id": "ning2001::PBU linear PU (polybutylene adipate/MDI/BDO)",
+      "sources": [
+        {
+          "citation": "C. Ning et al., Micro-structure and free volume properties of linear polyurethanes measured by using positron annihilation spectroscopy, Acta Polymerica Sinica 3 (2001) 299-304.",
+          "doi": null,
+          "source_id": "ning2001",
+          "url": "https://www.gfzxb.org/rc-pub/front/front-article/download/7072922/lowqualitypdf/%E7%94%A8%E6%AD%A3%E7%94%B5%E5%AD%90%E6%B9%AE%E6%B2%A1%E8%B0%B1%E7%A0%94%E7%A9%B6%E8%81%9A%E9%85%AF%E5%9E%8B%E8%81%9A%E6%B0%A8%E9%85%AF%E7%9A%84%E5%BE%AE%E8%A7%82%E7%BB%93%E6%9E%84%E5%92%8C%E8%87%AA%E7%94%B1%E4%BD%93%E7%A7%AF%E7%89%B9%E6%80%A7.pdf"
+        }
+      ],
+      "temperature_range_k": [
+        140.0,
+        350.0
+      ],
+      "tg_k": 205.0,
+      "topology": "thermoplastic"
+    },
+    {
+      "curve_key": "thermoset:polyether",
+      "extrapolation": "disabled",
+      "family": "polyether",
+      "interpolation": "piecewise linear between literature observations",
+      "is_live_default": true,
+      "label": "Crosslinked PPO tri-isocyanate PU extended with 5 wt% PCL diol",
+      "label_kind": "PALS spherical-equivalent cavity diameter proxy",
+      "pals_reliability_limit_k": null,
+      "points": [
+        {
+          "diameter_a": 7.26,
+          "diameter_uncertainty_a": 0.08,
+          "extraction_kind": "figure_digitized",
+          "record_id": "marques2008-ppo-pcl05-r4-298k",
+          "temperature_k": 298.0
+        },
+        {
+          "diameter_a": 7.44,
+          "diameter_uncertainty_a": 0.08,
+          "extraction_kind": "figure_digitized",
+          "record_id": "marques2008-ppo-pcl05-r4-310k",
+          "temperature_k": 310.0
+        },
+        {
+          "diameter_a": 7.54,
+          "diameter_uncertainty_a": 0.08,
+          "extraction_kind": "figure_digitized",
+          "record_id": "marques2008-ppo-pcl05-r4-324k",
+          "temperature_k": 324.0
+        }
+      ],
+      "series_id": "marques2008::Crosslinked PPO tri-isocyanate PU extended with 5 wt% PCL diol",
+      "sources": [
+        {
+          "citation": "M.F. Ferreira Marques et al., Free-Volume Studies in Polycaprolactone/Poly(propylene oxide) Urethane/Urea Membranes by Positron Lifetime Spectroscopy, Acta Physica Polonica A 113 (2008) 1359-1364.",
+          "doi": null,
+          "source_id": "marques2008",
+          "url": "https://bibliotekanauki.pl/articles/1812490.pdf"
+        }
+      ],
+      "temperature_range_k": [
+        298.0,
+        324.0
+      ],
+      "tg_k": null,
+      "topology": "thermoset"
+    }
+  ],
+  "method": {
+    "curve": "piecewise linear interpolation within one matched polymer series; chemistries and papers are not pooled",
+    "extrapolation": "disabled",
+    "series_selection": "the most temperature-resolved series is shown for each topology/family key; every eligible series remains auditable",
+    "uncertainty": "reported uncertainty when available; figure-digitization tolerance otherwise; absent values remain null"
+  },
+  "missing_curves": [
+    "thermoplastic:polyether",
+    "thermoplastic:polycarbonate"
+  ],
+  "name": "POLLY-MAP literature PALS proxy",
+  "schema_version": 2,
+  "status": "literature proxy; not calibrated for connected openings, diffusion, leaching or safety decisions",
+  "target": "PALS spherical-equivalent local cavity diameter",
+  "unit": "angstrom"
+}

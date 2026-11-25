@@ -1,0 +1,257 @@
+{
+  "dataset": {
+    "doi": "10.5281/zenodo.15789599",
+    "geometry_targets": {
+      "available": false,
+      "missing": [
+        "3D atomic coordinates",
+        "temperature-indexed molecular trajectories",
+        "interatomic distances in angstrom",
+        "density or radial-distribution targets"
+      ]
+    },
+    "license": "CC BY 4.0",
+    "md5": "31400a5f499394e3a6e0658488a464bb",
+    "name": "Curated Glass Transition Temperature for Polymers",
+    "polyurethane_records": 123,
+    "polyurethane_reliability": {
+      "black": 123
+    },
+    "polyurethane_sources": {
+      "GREA": 123
+    },
+    "polyurethane_tg_k": {
+      "first_quartile": 308.15,
+      "maximum": 496.15,
+      "median": 335.15,
+      "minimum": 213.15,
+      "third_quartile": 391.1
+    },
+    "records": 7367
+  },
+  "evaluation": {
+    "general_polymer_audit": {
+      "base": {
+        "mae_k": 44.414716,
+        "r2": 0.711233,
+        "records": 663,
+        "rmse_k": 59.194533
+      },
+      "fine_tuned": {
+        "mae_k": 44.878905,
+        "r2": 0.700873,
+        "records": 663,
+        "rmse_k": 60.247016
+      },
+      "mae_change_k": 0.464188
+    },
+    "polyurethane_ood_test": {
+      "base": {
+        "mae_k": 26.753196,
+        "r2": 0.785532,
+        "records": 25,
+        "rmse_k": 32.870507
+      },
+      "fine_tuned": {
+        "mae_k": 26.808729,
+        "r2": 0.782989,
+        "records": 25,
+        "rmse_k": 33.064817
+      },
+      "mae_change_k": 0.055532
+    }
+  },
+  "examples": [
+    {
+      "base_prediction_k": 407.1898,
+      "fine_tuned_prediction_k": 377.3613,
+      "psmiles": "[*]CCOC(=O)NCC1(C)CC(NC(=O)OCCN([*])c2ccc(/N=N/c3ccc(B(c4c(C)cc(C)cc4C)c4c(C)cc(C)cc4C)cc3)cc2)CC(C)(C)C1",
+      "truth_k": 419.15
+    },
+    {
+      "base_prediction_k": 403.0105,
+      "fine_tuned_prediction_k": 400.2463,
+      "psmiles": "[*]CCOC(=O)Nc1ccc(C)c(NC(=O)OCCN([*])c2ccc(/N=N/c3ccc(-c4nc5ccc([N+](=O)[O-])cc5n4CC)cc3)cc2)c1",
+      "truth_k": 431.15
+    },
+    {
+      "base_prediction_k": 398.0363,
+      "fine_tuned_prediction_k": 393.3029,
+      "psmiles": "[*]CCOC(=O)Nc1ccc(C)c(NC(=O)OCCN([*])c2ccc(/N=N/c3ccc(/C=C/c4nc5ccc([N+](=O)[O-])cc5n4CC)cc3)cc2)c1",
+      "truth_k": 444.15
+    },
+    {
+      "base_prediction_k": 361.7148,
+      "fine_tuned_prediction_k": 362.0409,
+      "psmiles": "[*]CCOC(=O)Nc1ccc(C)c(NC(=O)OCCN([*])c2ccc(/N=N/c3ccc(/N=N/c4cc(OC)c(/N=N/c5ccc([N+](=O)[O-])cc5)cc4OC)c(C)c3)cc2)c1",
+      "truth_k": 421.15
+    },
+    {
+      "base_prediction_k": 296.2027,
+      "fine_tuned_prediction_k": 280.7558,
+      "psmiles": "[*]CNC(=O)OCC([*])C",
+      "truth_k": 313.15
+    },
+    {
+      "base_prediction_k": 358.8801,
+      "fine_tuned_prediction_k": 343.1778,
+      "psmiles": "[*]COC(=O)N1CCN(C(=O)OCC([*])(C)C)CC1",
+      "truth_k": 343.15
+    },
+    {
+      "base_prediction_k": 393.9027,
+      "fine_tuned_prediction_k": 370.9767,
+      "psmiles": "[*]NC(=O)OCCN(CCOC(=O)NCC1(C)CC([*])CC(C)(C)C1)c1ccc(C=C(C#N)C#N)cc1",
+      "truth_k": 418.15
+    },
+    {
+      "base_prediction_k": 428.8022,
+      "fine_tuned_prediction_k": 414.7633,
+      "psmiles": "[*]NC(=O)OCCN(CCOC(=O)Nc1ccc(C)c([*])c1)c1ccc(-c2nc3ccc([N+](=O)[O-])cc3o2)cc1",
+      "truth_k": 429.15
+    }
+  ],
+  "limitations": [
+    "All 123 polyurethane records come from the GREA source and carry the black reliability label.",
+    "The target is Tg only; no formulation, cure, morphology or measurement-condition fields are modeled.",
+    "The model uses precomputed descriptors and cannot predict directly from a new formulation.",
+    "The OOD split measures descriptor distance, not disorder, temperature extremes or thermoset stability.",
+    "Columns containing the word distance are graph descriptors, not 3D interatomic distances.",
+    "Tg can anchor a qualitative softening regime, but this dataset cannot train an angstrom-distance predictor.",
+    "This benchmark is not suitable for formulation, processing, safety or experimental decisions."
+  ],
+  "model": {
+    "family": "standardized ridge regression with polyurethane-weighted fine-tuning",
+    "features": 28,
+    "name": "Polly Tg transfer baseline",
+    "target": "experimental glass-transition temperature",
+    "unit": "K"
+  },
+  "reproducibility": {
+    "command": "window-light-polymer-train",
+    "numpy": "2.0.2",
+    "python": "3.9.6",
+    "scikit_learn": "1.6.1",
+    "split_seed": "SHA-256 salts polly-general-v1 and polly-pu-v1"
+  },
+  "schema_version": 1,
+  "scientific_questions": {
+    "disorder_and_unusual_conditions": "not answered: descriptor-space OOD is not physical disorder",
+    "fine_tuning_tradeoff": "measured on a sealed general-polymer audit split",
+    "meaningful_downstream_task": "partial: held-out polyurethane Tg prediction",
+    "physical_stability": "not answered: no energy, force or dynamics model",
+    "reproducibility": "data DOI, checksum, deterministic splits, command and model coefficients recorded"
+  },
+  "selection": {
+    "base_alpha": 10.0,
+    "candidates": [
+      {
+        "allowed": true,
+        "general_guard": {
+          "mae_k": 46.149453,
+          "r2": 0.71563,
+          "records": 731,
+          "rmse_k": 60.719268
+        },
+        "polyurethane_weight": 0.0,
+        "pu_validation": {
+          "mae_k": 31.402916,
+          "r2": 0.152017,
+          "records": 20,
+          "rmse_k": 37.712924
+        }
+      },
+      {
+        "allowed": true,
+        "general_guard": {
+          "mae_k": 46.147121,
+          "r2": 0.71553,
+          "records": 731,
+          "rmse_k": 60.729937
+        },
+        "polyurethane_weight": 1.0,
+        "pu_validation": {
+          "mae_k": 30.828978,
+          "r2": 0.188961,
+          "records": 20,
+          "rmse_k": 36.88227
+        }
+      },
+      {
+        "allowed": true,
+        "general_guard": {
+          "mae_k": 46.163835,
+          "r2": 0.715096,
+          "records": 731,
+          "rmse_k": 60.77623
+        },
+        "polyurethane_weight": 3.0,
+        "pu_validation": {
+          "mae_k": 29.793974,
+          "r2": 0.246859,
+          "records": 20,
+          "rmse_k": 35.541429
+        }
+      },
+      {
+        "allowed": true,
+        "general_guard": {
+          "mae_k": 46.350659,
+          "r2": 0.712329,
+          "records": 731,
+          "rmse_k": 61.070587
+        },
+        "polyurethane_weight": 10.0,
+        "pu_validation": {
+          "mae_k": 26.944337,
+          "r2": 0.364276,
+          "records": 20,
+          "rmse_k": 32.653589
+        }
+      },
+      {
+        "allowed": true,
+        "general_guard": {
+          "mae_k": 47.395826,
+          "r2": 0.700958,
+          "records": 731,
+          "rmse_k": 62.265938
+        },
+        "polyurethane_weight": 30.0,
+        "pu_validation": {
+          "mae_k": 22.471068,
+          "r2": 0.495276,
+          "records": 20,
+          "rmse_k": 29.095353
+        }
+      },
+      {
+        "allowed": false,
+        "general_guard": {
+          "mae_k": 51.053435,
+          "r2": 0.659308,
+          "records": 731,
+          "rmse_k": 66.460815
+        },
+        "polyurethane_weight": 100.0,
+        "pu_validation": {
+          "mae_k": 19.565077,
+          "r2": 0.613474,
+          "records": 20,
+          "rmse_k": 25.46161
+        }
+      }
+    ],
+    "general_guard_degradation_ceiling": 0.05,
+    "polyurethane_weight": 30.0
+  },
+  "splits": {
+    "general_audit": 663,
+    "general_guard": 731,
+    "general_train": 5850,
+    "polyurethane_ood_rule": "20% farthest from the polyurethane descriptor centroid; labels unused",
+    "polyurethane_ood_test": 25,
+    "polyurethane_train": 78,
+    "polyurethane_validation": 20
+  }
+}

@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Meet Polly, an interactive guide to thermoplastic and thermoset polyurethane structures."
+    />
+    <title>Window Light Polymer</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Window Light Polymer home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>WINDOW LIGHT <strong>POLYMER</strong></span>
+      </a>
+      <span class="status"><i aria-hidden="true"></i>POLLY READY</span>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">ONE LINKAGE, TWO ARCHITECTURES</p>
+        <h1>Meet Polly.<br /><em>Then follow the connections.</em></h1>
+        <p class="lede">
+          Polly traces how thermoplastic and thermoset polyurethanes can share the same urethane linkage.
+          What changes the material is how their segments connect—and whether those connections can let go.
+        </p>
+      </section>
+
+      <section class="workspace" aria-label="Polly polyurethane structure explorer">
+        <div class="viewer-card">
+          <div class="card-heading">
+            <div>
+              <p class="eyebrow">STRUCTURE VIEW</p>
+              <div class="mode-switch" role="group" aria-label="Polyurethane family">
+                <button class="mode-button active" type="button" data-mode="thermoplastic" aria-pressed="true">
+                  Thermoplastic
+                </button>
+                <button class="mode-button" type="button" data-mode="thermoset" aria-pressed="false">
+                  Thermoset
+                </button>
+              </div>
+            </div>
+            <button id="heat-button" class="secondary-button" type="button" aria-pressed="false">Apply heat</button>
+          </div>
+
+          <div class="viewer-controls">
+            <label for="soft-segment">Soft-segment family</label>
+            <span class="select-wrap">
+              <select id="soft-segment">
+                <option value="polyether">Polyether</option>
+                <option value="polyester">Polyester</option>
+                <option value="polycaprolactone">Polycaprolactone</option>
+                <option value="polycarbonate">Polycarbonate</option>
+              </select>
+            </span>
+          </div>
+
+          <div class="canvas-wrap">
+            <svg
+              id="polymer-canvas"
+              viewBox="0 0 760 430"
+              role="img"
+              aria-labelledby="polymer-title polymer-description"
+            >
+              <title id="polymer-title">Thermoplastic polyurethane structure</title>
+              <desc id="polymer-description">Three segmented chains connected by reversible physical associations.</desc>
+            </svg>
+          </div>
+
+          <div class="legend" aria-label="Structure legend">
+            <span><i class="swatch soft" aria-hidden="true"></i>Soft segment</span>
+            <span><i class="swatch hard" aria-hidden="true"></i>Hard segment</span>
+            <span><i class="swatch urethane" aria-hidden="true"></i>Urethane linkage</span>
+            <span id="junction-legend"><i class="swatch physical" aria-hidden="true"></i>Physical association</span>
+          </div>
+        </div>
+
+        <aside class="result-card" aria-live="polite">
+          <p class="eyebrow">POLLY'S STRUCTURE READ</p>
+          <h2 id="family-name">Thermoplastic polyurethane</h2>
+          <p id="family-summary" class="family-summary">
+            Mostly linear segmented chains, held together in places by reversible hard-domain associations.
+          </p>
+          <dl>
+            <div><dt>Architecture</dt><dd id="architecture">Segmented chains</dd></div>
+            <div><dt>Junction type</dt><dd id="junction">Physical domains</dd></div>
+            <div><dt>With heat</dt><dd id="heat-response">Mobility rises</dd></div>
+            <div><dt>Melt reshaping</dt><dd id="reshaping">Often possible</dd></div>
+          </dl>
+          <div class="chemistry-strip">
+            <span>URETHANE GROUP</span>
+            <code>—NH—C(=O)—O—</code>
+          </div>
+          <p id="structure-note" class="result-note">
+            Dashed lines mark reversible associations—not new covalent bonds between chains.
+          </p>
+        </aside>
+      </section>
+
+      <section class="model-section" aria-labelledby="model-title">
+        <div class="model-intro">
+          <div>
+            <p class="eyebrow">POLLY'S FIRST TRAINABLE MODEL</p>
+            <h2 id="model-title">A narrow Tg test.<br /><em>With the misses left visible.</em></h2>
+          </div>
+          <p>
+            Polly first learns a transparent relationship between 28 polymer descriptors and experimental glass-transition
+            temperature. The broad model excludes polyurethanes; a second fit upweights polyurethane records, then both are
+            tested on the same unusual polyurethane structures that neither fit was allowed to see.
+          </p>
+        </div>
+
+        <div class="model-stat-grid" aria-live="polite">
+          <article class="model-stat">
+            <span>PU OOD MAE · broad model</span>
+            <strong id="pu-mae-base">Loading…</strong>
+            <small id="pu-test-count">Held-out polyurethane test</small>
+          </article>
+          <article class="model-stat">
+            <span>PU OOD MAE · fine-tuned</span>
+            <strong id="pu-mae-tuned">Loading…</strong>
+            <small id="pu-result">Checking transfer…</small>
+          </article>
+          <article class="model-stat">
+            <span>General-polymer audit</span>
+            <strong id="general-mae-delta">Loading…</strong>
+            <small>MAE change after PU fine-tuning</small>
+          </article>
+        </div>
+
+        <div class="thermal-proxy" aria-labelledby="thermal-title">
+          <div class="thermal-copy">
+            <p class="eyebrow">ADDITIVE-SIZE SCREEN</p>
+            <h3 id="thermal-title">Temperature vs accessible opening.<br /><em>Add your size line.</em></h3>
+            <p>
+              Polly uses a literature PALS local-cavity proxy when the selected chemistry and topology have numeric evidence;
+              otherwise it shows the original Tg-anchored scenario. Enter an additive diameter to inspect a size crossing.
+              Neither curve predicts leaching.
+            </p>
+            <div class="temperature-control">
+              <div>
+                <label for="temperature-slider">Temperature</label>
+                <output id="temperature-output" for="temperature-slider">Loading…</output>
+              </div>
+              <input id="temperature-slider" type="range" min="200" max="520" step="1" value="300" disabled />
+              <div class="temperature-scale" aria-hidden="true"><span>colder</span><span>hotter</span></div>
+            </div>
+            <div class="additive-control">
+              <div>
+                <label for="additive-size">Additive effective diameter</label>
+                <output id="additive-size-output" for="additive-size">5.0 Å</output>
+              </div>
+              <input id="additive-size" type="range" min="2" max="12" step="0.1" value="5.0" />
+              <div class="additive-scale" aria-hidden="true"><span>2 Å</span><span>12 Å</span></div>
+            </div>
+          </div>
+
+          <div class="thermal-readout" aria-live="polite">
+            <svg id="thermal-canvas" viewBox="0 0 720 360" role="img" aria-labelledby="thermal-svg-title thermal-svg-description">
+              <title id="thermal-svg-title">Temperature versus accessible free-volume opening</title>
+              <desc id="thermal-svg-description">A provisional polyurethane opening curve with an additive-size line and temperature cursor.</desc>
+              <g class="chart-grid">
+                <line x1="78" y1="40" x2="78" y2="300"></line>
+                <line x1="78" y1="300" x2="680" y2="300"></line>
+                <line x1="78" y1="235" x2="680" y2="235"></line>
+                <line x1="78" y1="170" x2="680" y2="170"></line>
+                <line x1="78" y1="105" x2="680" y2="105"></line>
+                <line x1="78" y1="40" x2="680" y2="40"></line>
+              </g>
+              <g class="chart-axis-labels">
+                <text x="60" y="305" text-anchor="end">2</text>
+                <text x="60" y="240" text-anchor="end">4.5</text>
+                <text x="60" y="175" text-anchor="end">7</text>
+                <text x="60" y="110" text-anchor="end">9.5</text>
+                <text x="60" y="45" text-anchor="end">12 Å</text>
+                <text id="temperature-min-label" x="78" y="328" text-anchor="middle">—</text>
+                <text id="temperature-tg-label" x="379" y="328" text-anchor="middle">Tg</text>
+                <text id="temperature-max-label" x="680" y="328" text-anchor="middle">—</text>
+                <text x="379" y="352" text-anchor="middle">temperature (K)</text>
+                <text id="diameter-y-label" transform="translate(18 170) rotate(-90)" text-anchor="middle">scenario accessible opening diameter (Å)</text>
+              </g>
+              <path id="opening-band" class="opening-band"></path>
+              <path id="opening-curve" class="opening-curve"></path>
+              <line id="tg-line" class="tg-line" x1="0" y1="40" x2="0" y2="300"></line>
+              <line id="additive-line" class="additive-line" x1="78" y1="0" x2="680" y2="0"></line>
+              <text id="additive-line-label" class="additive-line-label" x="670" y="0" text-anchor="end">additive</text>
+              <line id="temperature-cursor" class="temperature-cursor" x1="0" y1="40" x2="0" y2="300"></line>
+              <circle id="temperature-point" class="temperature-point" cx="0" cy="0" r="7"></circle>
+            </svg>
+            <div class="thermal-facts">
+              <div><span>Observed PU median Tg</span><strong id="tg-anchor">Loading…</strong></div>
+              <div><span id="opening-label">Scenario opening now</span><strong id="opening-now">Loading…</strong></div>
+              <div><span>Size-line crossing</span><strong id="size-crossing">Loading…</strong></div>
+            </div>
+            <div class="method-alpha">
+              <span>POLLY-MAP ALPHA</span>
+              <strong id="map-status-title">Loading literature evidence</strong>
+              <p id="map-status-copy">Checking for a matched chemistry-family and topology curve.</p>
+            </div>
+            <p class="thermal-boundary">
+              <strong>Model boundary:</strong> <span id="thermal-boundary-copy">Loading the curve provenance boundary.</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="evidence-grid">
+          <div class="evidence-table-wrap">
+            <table class="evidence-table">
+              <caption>What this first model can honestly answer</caption>
+              <thead><tr><th>Scientific question</th><th>Status</th><th>Evidence</th></tr></thead>
+              <tbody>
+                <tr><td>Meaningful downstream task</td><td><span class="evidence-status partial">Partial</span></td><td>Held-out polyurethane Tg prediction</td></tr>
+                <tr><td>Disorder and unusual conditions</td><td><span class="evidence-status no">Not yet</span></td><td>Tg-anchored cue; no coordinate trajectories or Å distances</td></tr>
+                <tr><td>Physical stability</td><td><span class="evidence-status no">Not yet</span></td><td>No energy, force or dynamics model</td></tr>
+                <tr><td>Fine-tuning damage</td><td><span class="evidence-status yes">Measured</span></td><td>Sealed general-polymer audit before and after</td></tr>
+                <tr><td>Reproducibility</td><td><span class="evidence-status yes">First pass</span></td><td>DOI, checksum, deterministic splits and coefficients</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <aside class="model-caveat">
+            <p class="eyebrow">THE IMPORTANT CAVEAT</p>
+            <h3 id="dataset-count">123 polyurethane records</h3>
+            <p>
+              Every polyurethane record comes from one upstream source and carries the dataset's lowest-confidence
+              reliability label. A useful benchmark can still be built—but not a formulation claim.
+            </p>
+          </aside>
+        </div>
+
+        <div class="next-model">
+          <p class="eyebrow">SERIOUS MODELING · ON DECK</p>
+          <p>
+            The additive-migration model will plot a temperature-dependent distribution of accessible free-volume
+            openings and overlay a user-supplied additive diameter. DFT can parameterize interactions; molecular
+            dynamics must generate the opening and diffusion curves. Crossing the size line is only a geometric
+            screen—partitioning and transport time are still required to predict leaching.
+          </p>
+        </div>
+      </section>
+
+      <section class="comparison-section" aria-labelledby="comparison-title">
+        <div class="section-intro">
+          <p class="eyebrow">READ THE NETWORK</p>
+          <h2 id="comparison-title">Same chemical family.<br />Different topology.</h2>
+          <p>
+            “Polyurethane” names the linkage family. “Thermoplastic” or “thermoset” describes the larger
+            architecture those linkages build.
+          </p>
+        </div>
+        <div class="comparison-grid">
+          <article>
+            <span class="comparison-mark chain-mark" aria-hidden="true"></span>
+            <h3>TPU: physical crosslinks</h3>
+            <p>
+              Linear or lightly branched chains alternate flexible soft segments with more polar hard segments.
+              Hard segments can cluster through hydrogen bonding and other intermolecular forces.
+            </p>
+          </article>
+          <article>
+            <span class="comparison-mark network-mark" aria-hidden="true"></span>
+            <h3>Thermoset: covalent crosslinks</h3>
+            <p>
+              Components with functionality above two create permanent junctions between chains. The resulting
+              three-dimensional network cannot separate into melt-flowing molecules.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="chemistry-section">
+        <p class="eyebrow">THE REACTION MOTIF</p>
+        <div class="reaction" aria-label="Simplified polyurethane formation reaction">
+          <span class="reactant">HO—R<sub>soft</sub>—OH</span>
+          <span class="operator">+</span>
+          <span class="reactant">OCN—R<sub>hard</sub>—NCO</span>
+          <span class="operator">forms</span>
+          <span class="product">[—O—C(=O)—NH—R<sub>hard</sub>—NH—C(=O)—O—R<sub>soft</sub>—]<sub>n</sub></span>
+        </div>
+        <div class="chemistry-copy">
+          <h2>Connectivity is the switch.</h2>
+          <div>
+            <p>
+              Difunctional building blocks favor long chains. Adding multifunctional polyols or isocyanates
+              introduces branch points; enough branch points create a thermoset network.
+            </p>
+            <p id="segment-copy">
+              Polyether soft segments place ether oxygens along a flexible backbone. They change segment behavior,
+              but they do not by themselves decide whether the whole polyurethane is a thermoplastic or thermoset.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="limits-section">
+        <p class="eyebrow">WHAT THE SKETCH LEAVES OUT</p>
+        <h2>A structure class is not a recipe.</h2>
+        <p>
+          Exact properties depend on reactant identity and functionality, hard-to-soft segment ratio, molecular
+          weight, stoichiometry, catalysts, additives, morphology, cure history, moisture, and test temperature.
+          Use this explorer to reason about architecture—not to choose a formulation or processing window.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <strong>Polly is an educational structure explorer.</strong>
+      Not a formulation, process specification, exposure assessment, or product-safety tool.
+    </footer>
+    <script src="/app.js" defer></script>
+  </body>
+</html>

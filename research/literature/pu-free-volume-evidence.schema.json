@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://window-light.local/schemas/pu-free-volume-evidence-v2.json",
+  "title": "Polly polyurethane free-volume and transport evidence record",
+  "description": "A traceable literature observation. Records in this staging schema are not automatically eligible as POLLY-MAP connected-opening labels.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_id",
+    "source_id",
+    "citation",
+    "source_url",
+    "family",
+    "polymer_id",
+    "topology",
+    "condition",
+    "measurement",
+    "extraction",
+    "eligibility"
+  ],
+  "properties": {
+    "record_id": {"type": "string", "minLength": 1},
+    "source_id": {"type": "string", "minLength": 1},
+    "citation": {"type": "string", "minLength": 1},
+    "doi": {"type": ["string", "null"]},
+    "source_url": {"type": "string", "format": "uri"},
+    "archive_url": {"type": "string", "format": "uri"},
+    "family": {
+      "enum": [
+        "polyether",
+        "polyester",
+        "polycaprolactone",
+        "polycarbonate",
+        "mixed_polyether_polyester",
+        "neat_polycarbonate"
+      ]
+    },
+    "polymer_id": {"type": "string", "minLength": 1},
+    "topology": {"enum": ["linear_thermoplastic", "crosslinked", "unknown", "not_polyurethane"]},
+    "composition": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          {"type": ["string", "number", "boolean", "null"]},
+          {"type": "array", "items": {"type": ["string", "number", "boolean", "null"]}}
+        ]
+      }
+    },
+    "condition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "temperature_k": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "temperature_range_k": {
+          "type": ["array", "null"],
+          "prefixItems": [
+            {"type": "number", "exclusiveMinimum": 0},
+            {"type": "number", "exclusiveMinimum": 0}
+          ],
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "pressure": {"type": ["string", "null"]},
+        "notes": {"type": ["string", "null"]}
+      }
+    },
+    "measurement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["method", "observable", "value", "unit"],
+      "properties": {
+        "method": {"type": "string", "minLength": 1},
+        "observable": {"type": "string", "minLength": 1},
+        "value": {"type": ["number", "string", "null"]},
+        "uncertainty": {"type": ["number", "null"], "minimum": 0},
+        "unit": {"type": ["string", "null"]},
+        "replicates": {"type": ["integer", "null"], "minimum": 1}
+      }
+    },
+    "derived": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "spherical_equivalent_diameter_a": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "spherical_equivalent_diameter_uncertainty_a": {"type": ["number", "null"], "minimum": 0},
+        "derivation": {"type": ["string", "null"]}
+      }
+    },
+    "validity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["max_reliable_temperature_k", "reason"],
+      "properties": {
+        "max_reliable_temperature_k": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    },
+    "extraction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "locator"],
+      "properties": {
+        "kind": {"enum": ["reported_text", "reported_table", "figure_digitized", "abstract_only"]},
+        "locator": {"type": "string", "minLength": 1},
+        "digitization_tolerance": {"type": ["number", "null"], "minimum": 0},
+        "digitization_tolerance_unit": {"type": ["string", "null"]}
+      }
+    },
+    "eligibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["polly_map_opening_label", "transport_validation", "reason"],
+      "properties": {
+        "polly_map_opening_label": {"enum": ["no", "surrogate_only", "candidate"]},
+        "transport_validation": {"type": "boolean"},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

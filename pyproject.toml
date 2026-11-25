@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "window-light-polymer"
+version = "0.1.0"
+description = "An interactive polyurethane structure explorer for thermoplastic and thermoset architectures."
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "numpy>=1.24,<3",
+  "scipy>=1.10,<2",
+  "scikit-learn>=1.3,<2",
+]
+
+[project.scripts]
+window-light-polymer = "window_light_polymer.server:main"
+window-light-polymer-fetch = "window_light_polymer.data:main"
+window-light-polymer-train = "window_light_polymer.train:main"
+window-light-polymer-migration-train = "window_light_polymer.migration_train:main"
+window-light-polymer-literature-proxy = "window_light_polymer.literature_proxy_train:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+window_light_polymer = ["web/*"]

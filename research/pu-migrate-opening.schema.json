@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://window-light.local/schemas/pu-migrate-opening-v1.json",
+  "title": "POLLY-MAP temperature-indexed opening record",
+  "description": "One independently sourced PALS or MD estimate of median connected probe-accessible opening diameter.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "polymer_id",
+    "chemistry_group",
+    "topology",
+    "temperature_k",
+    "tg_k",
+    "hard_segment_fraction",
+    "crosslink_density_mol_l",
+    "opening_p50_a",
+    "provenance_kind"
+  ],
+  "properties": {
+    "polymer_id": {"type": "string", "minLength": 1},
+    "chemistry_group": {"type": "string", "minLength": 1},
+    "topology": {"enum": ["thermoplastic", "thermoset"]},
+    "temperature_k": {"type": "number", "exclusiveMinimum": 0},
+    "tg_k": {"type": "number", "exclusiveMinimum": 0},
+    "hard_segment_fraction": {"type": "number", "minimum": 0, "maximum": 1},
+    "crosslink_density_mol_l": {"type": "number", "minimum": 0},
+    "opening_p50_a": {"type": "number", "exclusiveMinimum": 0},
+    "provenance_kind": {"enum": ["experiment", "simulation"]}
+  }
+}
