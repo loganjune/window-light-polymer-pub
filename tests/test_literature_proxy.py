@@ -17,11 +17,12 @@ ARTIFACT_PATH = PROJECT_ROOT / "artifacts" / "polly-map-pals-proxy.json"
 class LiteratureProxyTests(unittest.TestCase):
     def test_proxy_is_built_from_surrogate_records_only(self) -> None:
         artifact = build_pals_proxy_artifact(read_evidence(EVIDENCE_PATH))
-        self.assertEqual(artifact["data"]["proxy_points"], 18)
-        self.assertEqual(artifact["data"]["numeric_surrogate_points"], 24)
-        self.assertEqual(artifact["data"]["independent_surrogate_sources"], 3)
-        self.assertEqual(artifact["data"]["independent_polymer_series"], 4)
-        self.assertEqual(artifact["data"]["curves"], 3)
+        self.assertEqual(artifact["data"]["proxy_points"], 23)
+        self.assertEqual(artifact["data"]["numeric_surrogate_points"], 39)
+        self.assertEqual(artifact["data"]["independent_surrogate_sources"], 4)
+        self.assertEqual(artifact["data"]["independent_polymer_series"], 7)
+        self.assertEqual(artifact["data"]["curves"], 4)
+        self.assertIn("thermoplastic:polyether", artifact["curves"])
         self.assertIn("thermoplastic:polyester", artifact["curves"])
         self.assertIn("thermoplastic:polycaprolactone", artifact["curves"])
         self.assertIn("thermoset:polyether", artifact["curves"])
@@ -33,6 +34,12 @@ class LiteratureProxyTests(unittest.TestCase):
         self.assertEqual(polyester["excluded_observations_from_live_interpolation"], 4)
         self.assertEqual(polyester["temperature_range_k"], [200.0, 296.0])
         self.assertEqual(len(polyester["available_series"]), 2)
+
+        polyether = artifact["curves"]["thermoplastic:polyether"]
+        self.assertEqual(polyether["series_id"], "mondal2006::PU-MG-EG1: PTMG/PEG/MDI/BDO segmented polyurethane")
+        self.assertEqual(len(polyether["points"]), 5)
+        self.assertEqual(len(polyether["available_series"]), 3)
+        self.assertEqual(polyether["temperature_range_k"], [268.0, 338.0])
 
     def test_tao_eldrup_conversion_matches_curated_point(self) -> None:
         radius = tao_eldrup_radius_angstrom(1.2695)

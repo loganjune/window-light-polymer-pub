@@ -43,8 +43,8 @@ class ServerTests(unittest.TestCase):
     def test_literature_proxy_is_loadable(self):
         proxy = load_migration_proxy(PROJECT_ROOT / "artifacts" / "polly-map-pals-proxy.json")
         self.assertIsNotNone(proxy)
-        self.assertEqual(proxy["data"]["proxy_points"], 18)
-        self.assertEqual(proxy["data"]["numeric_surrogate_points"], 24)
+        self.assertEqual(proxy["data"]["proxy_points"], 23)
+        self.assertEqual(proxy["data"]["numeric_surrogate_points"], 39)
         self.assertEqual(proxy["target"], "PALS spherical-equivalent local cavity diameter")
 
     def test_unknown_assets_are_not_served(self):

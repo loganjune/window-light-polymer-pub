@@ -34,7 +34,8 @@
           "temperature_k": 350.0
         }
       ],
-      "selection_reason": "most temperature-resolved matched series; chemistries are not pooled",
+      "selection_priority": 0.0,
+      "selection_reason": "most temperature-resolved matched series; an auditable curation priority breaks ties; chemistries are not pooled",
       "series_id": "ning2001::PCU linear PU (polycaprolactone/MDI/BDO)",
       "sources": [
         {
@@ -193,7 +194,8 @@
           "temperature_k": 296.0
         }
       ],
-      "selection_reason": "most temperature-resolved matched series; chemistries are not pooled",
+      "selection_priority": 0.0,
+      "selection_reason": "most temperature-resolved matched series; an auditable curation priority breaks ties; chemistries are not pooled",
       "series_id": "consolati2016::Amorphous PBA/MDI/BDO thermoplastic polyurethane",
       "sources": [
         {
@@ -208,6 +210,95 @@
         296.0
       ],
       "tg_k": 244.0,
+      "topology": "thermoplastic"
+    },
+    "thermoplastic:polyether": {
+      "available_series": [
+        {
+          "label": "PU-MG-EG1: PTMG/PEG/MDI/BDO segmented polyurethane",
+          "observations": 5,
+          "series_id": "mondal2006::PU-MG-EG1: PTMG/PEG/MDI/BDO segmented polyurethane",
+          "source_id": "mondal2006"
+        },
+        {
+          "label": "PU-MG-EG2: PTMG/PEG/MDI/BDO segmented polyurethane",
+          "observations": 5,
+          "series_id": "mondal2006::PU-MG-EG2: PTMG/PEG/MDI/BDO segmented polyurethane",
+          "source_id": "mondal2006"
+        },
+        {
+          "label": "PU-MG-PG-EG: PTMG/PPG/PEG/MDI/BDO segmented polyurethane",
+          "observations": 5,
+          "series_id": "mondal2006::PU-MG-PG-EG: PTMG/PPG/PEG/MDI/BDO segmented polyurethane",
+          "source_id": "mondal2006"
+        }
+      ],
+      "curve_key": "thermoplastic:polyether",
+      "excluded_observations_from_live_interpolation": 0,
+      "extrapolation": "disabled",
+      "family": "polyether",
+      "interpolation": "piecewise linear between literature observations",
+      "label": "PU-MG-EG1: PTMG/PEG/MDI/BDO segmented polyurethane",
+      "label_kind": "PALS spherical-equivalent cavity diameter proxy",
+      "pals_reliability_limit_k": null,
+      "points": [
+        {
+          "diameter_a": 5.802,
+          "diameter_uncertainty_a": 0.05,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 2.05,
+          "record_id": "mondal2006-mg-eg1-lifetime-268k",
+          "temperature_k": 268.0
+        },
+        {
+          "diameter_a": 6.704,
+          "diameter_uncertainty_a": 0.05,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 2.6,
+          "record_id": "mondal2006-mg-eg1-lifetime-293k",
+          "temperature_k": 293.0
+        },
+        {
+          "diameter_a": 6.809,
+          "diameter_uncertainty_a": 0.05,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 2.67,
+          "record_id": "mondal2006-mg-eg1-lifetime-308k",
+          "temperature_k": 308.0
+        },
+        {
+          "diameter_a": 6.853,
+          "diameter_uncertainty_a": 0.05,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 2.7,
+          "record_id": "mondal2006-mg-eg1-lifetime-323k",
+          "temperature_k": 323.0
+        },
+        {
+          "diameter_a": 6.882,
+          "diameter_uncertainty_a": 0.05,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 2.72,
+          "record_id": "mondal2006-mg-eg1-lifetime-338k",
+          "temperature_k": 338.0
+        }
+      ],
+      "selection_priority": 3.0,
+      "selection_reason": "most temperature-resolved matched series; an auditable curation priority breaks ties; chemistries are not pooled",
+      "series_id": "mondal2006::PU-MG-EG1: PTMG/PEG/MDI/BDO segmented polyurethane",
+      "sources": [
+        {
+          "citation": "S. Mondal, J.L. Hu, Z. Yong, Free volume and water vapor permeability of dense segmented polyurethane membrane, Journal of Membrane Science 280 (2006) 427-432.",
+          "doi": "10.1016/j.memsci.2006.01.047",
+          "source_id": "mondal2006",
+          "url": "https://www.academia.edu/30761911/Free_volume_and_water_vapor_permeability_of_dense_segmented_polyurethane_membrane"
+        }
+      ],
+      "temperature_range_k": [
+        268.0,
+        338.0
+      ],
+      "tg_k": null,
       "topology": "thermoplastic"
     },
     "thermoset:polyether": {
@@ -250,7 +341,8 @@
           "temperature_k": 324.0
         }
       ],
-      "selection_reason": "most temperature-resolved matched series; chemistries are not pooled",
+      "selection_priority": 0.0,
+      "selection_reason": "most temperature-resolved matched series; an auditable curation priority breaks ties; chemistries are not pooled",
       "series_id": "marques2008::Crosslinked PPO tri-isocyanate PU extended with 5 wt% PCL diol",
       "sources": [
         {
@@ -269,12 +361,12 @@
     }
   },
   "data": {
-    "curated_records_scanned": 48,
-    "curves": 3,
-    "independent_polymer_series": 4,
-    "independent_surrogate_sources": 3,
-    "numeric_surrogate_points": 24,
-    "proxy_points": 18
+    "curated_records_scanned": 63,
+    "curves": 4,
+    "independent_polymer_series": 7,
+    "independent_surrogate_sources": 4,
+    "numeric_surrogate_points": 39,
+    "proxy_points": 23
   },
   "evidence_series": [
     {
@@ -302,6 +394,7 @@
           "temperature_k": 350.0
         }
       ],
+      "selection_priority": 0.0,
       "series_id": "ning2001::PCU linear PU (polycaprolactone/MDI/BDO)",
       "sources": [
         {
@@ -482,6 +575,7 @@
           "temperature_k": 328.0
         }
       ],
+      "selection_priority": 0.0,
       "series_id": "consolati2016::Amorphous PBA/MDI/BDO thermoplastic polyurethane",
       "sources": [
         {
@@ -523,6 +617,7 @@
           "temperature_k": 350.0
         }
       ],
+      "selection_priority": 0.0,
       "series_id": "ning2001::PBU linear PU (polybutylene adipate/MDI/BDO)",
       "sources": [
         {
@@ -537,6 +632,210 @@
         350.0
       ],
       "tg_k": 205.0,
+      "topology": "thermoplastic"
+    },
+    {
+      "curve_key": "thermoplastic:polyether",
+      "extrapolation": "disabled",
+      "family": "polyether",
+      "interpolation": "piecewise linear between literature observations",
+      "is_live_default": true,
+      "label": "PU-MG-EG1: PTMG/PEG/MDI/BDO segmented polyurethane",
+      "label_kind": "PALS spherical-equivalent cavity diameter proxy",
+      "pals_reliability_limit_k": null,
+      "points": [
+        {
+          "diameter_a": 5.802,
+          "diameter_uncertainty_a": 0.05,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 2.05,
+          "record_id": "mondal2006-mg-eg1-lifetime-268k",
+          "temperature_k": 268.0
+        },
+        {
+          "diameter_a": 6.704,
+          "diameter_uncertainty_a": 0.05,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 2.6,
+          "record_id": "mondal2006-mg-eg1-lifetime-293k",
+          "temperature_k": 293.0
+        },
+        {
+          "diameter_a": 6.809,
+          "diameter_uncertainty_a": 0.05,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 2.67,
+          "record_id": "mondal2006-mg-eg1-lifetime-308k",
+          "temperature_k": 308.0
+        },
+        {
+          "diameter_a": 6.853,
+          "diameter_uncertainty_a": 0.05,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 2.7,
+          "record_id": "mondal2006-mg-eg1-lifetime-323k",
+          "temperature_k": 323.0
+        },
+        {
+          "diameter_a": 6.882,
+          "diameter_uncertainty_a": 0.05,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 2.72,
+          "record_id": "mondal2006-mg-eg1-lifetime-338k",
+          "temperature_k": 338.0
+        }
+      ],
+      "selection_priority": 3.0,
+      "series_id": "mondal2006::PU-MG-EG1: PTMG/PEG/MDI/BDO segmented polyurethane",
+      "sources": [
+        {
+          "citation": "S. Mondal, J.L. Hu, Z. Yong, Free volume and water vapor permeability of dense segmented polyurethane membrane, Journal of Membrane Science 280 (2006) 427-432.",
+          "doi": "10.1016/j.memsci.2006.01.047",
+          "source_id": "mondal2006",
+          "url": "https://www.academia.edu/30761911/Free_volume_and_water_vapor_permeability_of_dense_segmented_polyurethane_membrane"
+        }
+      ],
+      "temperature_range_k": [
+        268.0,
+        338.0
+      ],
+      "tg_k": null,
+      "topology": "thermoplastic"
+    },
+    {
+      "curve_key": "thermoplastic:polyether",
+      "extrapolation": "disabled",
+      "family": "polyether",
+      "interpolation": "piecewise linear between literature observations",
+      "is_live_default": false,
+      "label": "PU-MG-EG2: PTMG/PEG/MDI/BDO segmented polyurethane",
+      "label_kind": "PALS spherical-equivalent cavity diameter proxy",
+      "pals_reliability_limit_k": null,
+      "points": [
+        {
+          "diameter_a": 5.838,
+          "diameter_uncertainty_a": 0.05,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 2.07,
+          "record_id": "mondal2006-mg-eg2-lifetime-268k",
+          "temperature_k": 268.0
+        },
+        {
+          "diameter_a": 6.489,
+          "diameter_uncertainty_a": 0.05,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 2.46,
+          "record_id": "mondal2006-mg-eg2-lifetime-293k",
+          "temperature_k": 293.0
+        },
+        {
+          "diameter_a": 6.689,
+          "diameter_uncertainty_a": 0.05,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 2.59,
+          "record_id": "mondal2006-mg-eg2-lifetime-308k",
+          "temperature_k": 308.0
+        },
+        {
+          "diameter_a": 6.749,
+          "diameter_uncertainty_a": 0.05,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 2.63,
+          "record_id": "mondal2006-mg-eg2-lifetime-323k",
+          "temperature_k": 323.0
+        },
+        {
+          "diameter_a": 6.838,
+          "diameter_uncertainty_a": 0.05,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 2.69,
+          "record_id": "mondal2006-mg-eg2-lifetime-338k",
+          "temperature_k": 338.0
+        }
+      ],
+      "selection_priority": 2.0,
+      "series_id": "mondal2006::PU-MG-EG2: PTMG/PEG/MDI/BDO segmented polyurethane",
+      "sources": [
+        {
+          "citation": "S. Mondal, J.L. Hu, Z. Yong, Free volume and water vapor permeability of dense segmented polyurethane membrane, Journal of Membrane Science 280 (2006) 427-432.",
+          "doi": "10.1016/j.memsci.2006.01.047",
+          "source_id": "mondal2006",
+          "url": "https://www.academia.edu/30761911/Free_volume_and_water_vapor_permeability_of_dense_segmented_polyurethane_membrane"
+        }
+      ],
+      "temperature_range_k": [
+        268.0,
+        338.0
+      ],
+      "tg_k": null,
+      "topology": "thermoplastic"
+    },
+    {
+      "curve_key": "thermoplastic:polyether",
+      "extrapolation": "disabled",
+      "family": "polyether",
+      "interpolation": "piecewise linear between literature observations",
+      "is_live_default": false,
+      "label": "PU-MG-PG-EG: PTMG/PPG/PEG/MDI/BDO segmented polyurethane",
+      "label_kind": "PALS spherical-equivalent cavity diameter proxy",
+      "pals_reliability_limit_k": null,
+      "points": [
+        {
+          "diameter_a": 6.132,
+          "diameter_uncertainty_a": 0.05,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 2.24,
+          "record_id": "mondal2006-mg-pg-eg-lifetime-268k",
+          "temperature_k": 268.0
+        },
+        {
+          "diameter_a": 6.896,
+          "diameter_uncertainty_a": 0.05,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 2.73,
+          "record_id": "mondal2006-mg-pg-eg-lifetime-293k",
+          "temperature_k": 293.0
+        },
+        {
+          "diameter_a": 7.082,
+          "diameter_uncertainty_a": 0.05,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 2.86,
+          "record_id": "mondal2006-mg-pg-eg-lifetime-308k",
+          "temperature_k": 308.0
+        },
+        {
+          "diameter_a": 7.137,
+          "diameter_uncertainty_a": 0.05,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 2.9,
+          "record_id": "mondal2006-mg-pg-eg-lifetime-323k",
+          "temperature_k": 323.0
+        },
+        {
+          "diameter_a": 7.151,
+          "diameter_uncertainty_a": 0.05,
+          "extraction_kind": "figure_digitized",
+          "o_ps_lifetime_ns": 2.91,
+          "record_id": "mondal2006-mg-pg-eg-lifetime-338k",
+          "temperature_k": 338.0
+        }
+      ],
+      "selection_priority": 1.0,
+      "series_id": "mondal2006::PU-MG-PG-EG: PTMG/PPG/PEG/MDI/BDO segmented polyurethane",
+      "sources": [
+        {
+          "citation": "S. Mondal, J.L. Hu, Z. Yong, Free volume and water vapor permeability of dense segmented polyurethane membrane, Journal of Membrane Science 280 (2006) 427-432.",
+          "doi": "10.1016/j.memsci.2006.01.047",
+          "source_id": "mondal2006",
+          "url": "https://www.academia.edu/30761911/Free_volume_and_water_vapor_permeability_of_dense_segmented_polyurethane_membrane"
+        }
+      ],
+      "temperature_range_k": [
+        268.0,
+        338.0
+      ],
+      "tg_k": null,
       "topology": "thermoplastic"
     },
     {
@@ -571,6 +870,7 @@
           "temperature_k": 324.0
         }
       ],
+      "selection_priority": 0.0,
       "series_id": "marques2008::Crosslinked PPO tri-isocyanate PU extended with 5 wt% PCL diol",
       "sources": [
         {
@@ -591,11 +891,10 @@
   "method": {
     "curve": "piecewise linear interpolation within one matched polymer series; chemistries and papers are not pooled",
     "extrapolation": "disabled",
-    "series_selection": "the most temperature-resolved series is shown for each topology/family key; every eligible series remains auditable",
+    "series_selection": "the most temperature-resolved series is shown for each topology/family key; an auditable curation priority breaks ties; every eligible series remains auditable",
     "uncertainty": "reported uncertainty when available; figure-digitization tolerance otherwise; absent values remain null"
   },
   "missing_curves": [
-    "thermoplastic:polyether",
     "thermoplastic:polycarbonate"
   ],
   "name": "POLLY-MAP literature PALS proxy",

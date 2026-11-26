@@ -1,12 +1,12 @@
 # Polly literature curation: selected polyurethane families
 
-Status: curated evidence set v2. It contains 48 traceable records, including 24 numeric PALS temperature/cavity observations from 3 independent papers and 4 polymer series. It is suitable for source tracking, hypothesis design, and downstream transport checks. It is **not yet a defensible training set for connected opening diameter**.
+Status: curated evidence set v3. It contains 63 traceable records, including 39 numeric PALS temperature/cavity observations from 4 independent papers and 7 polymer series. It is suitable for source tracking, hypothesis design, and downstream transport checks. It is **not yet a defensible training set for connected opening diameter**.
 
 ## Scope chosen for Polly
 
 | Polly family | Target topology | Best evidence in this pass | Current readiness |
 | --- | --- | --- | --- |
-| Polyether | Linear thermoplastic | PTMG-PU PALS/WVP study; two commercial polyether-PU NO diffusion datasets | Transport validation ready; numeric PALS curve still needs licensed figure extraction |
+| Polyether | Linear thermoplastic | Three PTMG-rich segmented-PU PALS/WVP series; two commercial polyether-PU NO diffusion datasets | Temperature-resolved PALS surrogate and transport validation ready; an independent non-PEG-blended replication is still needed |
 | Polyester | Linear thermoplastic | Independent amorphous polybutylene-adipate TPU PALS series with 17 digitized temperatures, plus reported endpoints for a second PBA-PU | Temperature-resolved PALS surrogate ready below the source's 300 K reliability boundary; not connected-opening ready |
 | Polycaprolactone | Linear thermoplastic | PCL-PU PALS radius endpoints from 140-350 K; independent PCL-PU PALS/WVP study | Coarse PALS surrogate ready, not connected-opening ready |
 | Polycarbonate | Linear/commercial PU | Bionate 80A NO diffusion at 298 and 310 K | Downstream transport check ready; no direct PCU PALS temperature curve found |
@@ -18,6 +18,7 @@ The machine-readable staging dataset is [`pu-free-volume-evidence.jsonl`](./pu-f
 
 Key numeric observations:
 
+- Linear polyether segmented polyurethane: three PTMG-rich formulations contribute 15 digitized o-Ps lifetime observations from 268-338 K. The live default is the closest-to-single-soft-segment series, PU-MG-EG1 (PTMG with 5 wt% PEG, 25 wt% hard segment), selected by a recorded curation priority rather than pooling the three formulations. The paper also reports WVP, but local cavity size and hydrophilicity remain separate transport controls.
 - Independent amorphous polybutylene-adipate TPU: 17 o-Ps lifetime observations were digitized from 200-328 K and converted with the paper's Tao-Eldrup spherical model. The 13 observations from 200-296 K are allowed into the live interpolation. Four observations above 300 K remain in the audit dataset but are excluded from the live curve because the authors warn that o-Ps may no longer reliably report host-cavity size there. The same paper reports Tg = 244 K and an anisotropic hole-growth exponent of about 2 ± 0.2.
 - Linear polybutylene-adipate polyurethane: PALS spherical-equivalent mean hole radius increased from 1.92 Å at 140 K to 3.19 Å near 350 K; the paper reports 33% crystallinity and a 314 K soft-segment melting transition.
 - Linear polycaprolactone polyurethane: the corresponding radius increased from 1.97 Å to 3.30 Å; the paper reports 18% crystallinity and a high-temperature transition around 310-311 K.
@@ -41,6 +42,7 @@ This matters because the PPO/PCL study found only a weak relationship between to
 
 | Source | Families used | Decision |
 | --- | --- | --- |
+| Mondal et al. (2006), Journal of Membrane Science, DOI 10.1016/j.memsci.2006.01.047 | Polyether | Accepted as three independent formulation series with 15 Figure 4, 5 and 7 lifetimes, cross-checked against the authors' Figure 8 radius curves; PU-MG-EG1 is the live default because it has the lowest PEG blend fraction |
 | Consolati et al. (2016), Journal of Polymer Science Part B, DOI 10.1002/polb.24119 | Polyester | Accepted as an independent, temperature-resolved amorphous TPU series; 17 Figure 4 lifetimes retained, with only the 13 points below 300 K enabled for interpolation under the authors' reliability warning |
 | Ning et al. (2001), Acta Polymerica Sinica | Polyester, PCL | Accepted for reported endpoint radii, transitions, and crystallinity; spherical-hole surrogate only |
 | Wang et al. (2004), Materials Chemistry and Physics, DOI 10.1016/j.matchemphys.2004.07.012 | Polyether, polyester, PCL | Accepted as highest-priority matched-family source; numeric figures not transcribed without full-text figure access |
@@ -54,9 +56,9 @@ This matters because the PPO/PCL study found only a weak relationship between to
 
 ## What Polly can do next without pretending
 
-1. Plot a **PALS spherical-equivalent cavity diameter** evidence layer for polyester, PCL, and the mixed crosslinked PPO/PCL material, with a visible surrogate label and source-specific reliability boundary.
+1. Plot a **PALS spherical-equivalent cavity diameter** evidence layer for polyether, polyester, PCL, and the mixed crosslinked PPO/PCL material, with a visible surrogate label and source-specific reliability boundary.
 2. Add the polyether and polycarbonate NO diffusion values as a separate downstream-validation panel.
-3. Obtain the licensed figures from Wang et al. (2004), digitize all three 30 wt% hard-segment curves, and keep the raw pixel calibration plus uncertainty.
+3. Obtain the licensed figures from Wang et al. (2004) as an independent matched-family replication, digitize all three 30 wt% hard-segment curves, and keep the raw pixel calibration plus uncertainty.
 4. Commission or locate a neat crosslinked PPO/PPG polyurethane PALS temperature series with full formulation, crosslink density, and replicate uncertainty.
 5. Generate MD probe-accessibility curves for the same formulations, then calibrate PALS local-hole measures against connected probe-accessible openings before training POLLY-MAP.
 

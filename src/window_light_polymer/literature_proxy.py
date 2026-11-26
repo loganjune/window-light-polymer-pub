@@ -176,6 +176,10 @@ def build_pals_proxy_artifact(records: list[dict[str, Any]]) -> dict[str, Any]:
             "label_kind": "PALS spherical-equivalent cavity diameter proxy",
             "temperature_range_k": [points[0]["temperature_k"], points[-1]["temperature_k"]],
             "tg_k": tg_values[0] if len(tg_values) == 1 else None,
+            "selection_priority": max(
+                float((record.get("composition") or {}).get("live_proxy_priority", 0))
+                for record in group
+            ),
             "pals_reliability_limit_k": min(reliability_limits) if reliability_limits else None,
             "points": points,
             "interpolation": "piecewise linear between literature observations",
@@ -187,7 +191,14 @@ def build_pals_proxy_artifact(records: list[dict[str, Any]]) -> dict[str, Any]:
 
     curves: dict[str, Any] = {}
     for key, series_group in sorted(by_key.items()):
-        selected = max(series_group, key=lambda series: (len(series["points"]), series["series_id"]))
+        selected = max(
+            series_group,
+            key=lambda series: (
+                len(series["points"]),
+                series["selection_priority"],
+                series["series_id"],
+            ),
+        )
         curve = dict(selected)
         reliability_limit = curve.get("pals_reliability_limit_k")
         if isinstance(reliability_limit, (int, float)):
@@ -203,7 +214,10 @@ def build_pals_proxy_artifact(records: list[dict[str, Any]]) -> dict[str, Any]:
             ]
         else:
             curve["excluded_observations_from_live_interpolation"] = 0
-        curve["selection_reason"] = "most temperature-resolved matched series; chemistries are not pooled"
+        curve["selection_reason"] = (
+            "most temperature-resolved matched series; an auditable curation priority breaks ties; "
+            "chemistries are not pooled"
+        )
         curve["available_series"] = [
             {
                 "series_id": series["series_id"],
@@ -229,7 +243,7 @@ def build_pals_proxy_artifact(records: list[dict[str, Any]]) -> dict[str, Any]:
             "curve": "piecewise linear interpolation within one matched polymer series; chemistries and papers are not pooled",
             "extrapolation": "disabled",
             "uncertainty": "reported uncertainty when available; figure-digitization tolerance otherwise; absent values remain null",
-            "series_selection": "the most temperature-resolved series is shown for each topology/family key; every eligible series remains auditable",
+            "series_selection": "the most temperature-resolved series is shown for each topology/family key; an auditable curation priority breaks ties; every eligible series remains auditable",
         },
         "data": {
             "curated_records_scanned": len(records),

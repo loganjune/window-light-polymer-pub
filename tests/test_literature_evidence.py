@@ -2,6 +2,8 @@ import json
 import unittest
 from pathlib import Path
 
+from window_light_polymer.literature_proxy import tao_eldrup_radius_angstrom
+
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 EVIDENCE_PATH = PROJECT_ROOT / "research" / "literature" / "pu-free-volume-evidence.jsonl"
@@ -18,7 +20,7 @@ class LiteratureEvidenceTests(unittest.TestCase):
     def test_records_have_unique_ids_and_traceability(self) -> None:
         ids = [record["record_id"] for record in self.records]
         self.assertEqual(len(ids), len(set(ids)))
-        self.assertGreaterEqual(len(self.records), 48)
+        self.assertGreaterEqual(len(self.records), 63)
         for record in self.records:
             self.assertTrue(record["citation"])
             self.assertTrue(record["source_url"].startswith("https://"))
@@ -68,6 +70,21 @@ class LiteratureEvidenceTests(unittest.TestCase):
         self.assertEqual(len(lifetime_records), 17)
         self.assertTrue(all(record["validity"]["max_reliable_temperature_k"] == 300 for record in lifetime_records))
         self.assertEqual(sum(record["condition"]["temperature_k"] > 300 for record in lifetime_records), 4)
+
+    def test_polyether_lifetime_series_are_numeric_and_reproducible(self) -> None:
+        records = [
+            record for record in self.records
+            if record["source_id"] == "mondal2006"
+            and record["measurement"]["observable"] == "o_ps_lifetime"
+        ]
+        self.assertEqual(len(records), 15)
+        self.assertEqual(len({record["polymer_id"] for record in records}), 3)
+        self.assertEqual({record["condition"]["temperature_k"] for record in records}, {268, 293, 308, 323, 338})
+        self.assertTrue(all(record["family"] == "polyether" for record in records))
+        self.assertTrue(all(record["topology"] == "linear_thermoplastic" for record in records))
+        for record in records:
+            expected = 2.0 * tao_eldrup_radius_angstrom(record["measurement"]["value"])
+            self.assertAlmostEqual(record["derived"]["spherical_equivalent_diameter_a"], expected, places=3)
 
 
 if __name__ == "__main__":

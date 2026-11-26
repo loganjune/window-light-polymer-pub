@@ -32,9 +32,9 @@ Then open <http://127.0.0.1:4175/>. The expected result is 20 passing tests.
 - POLLY-MAP alpha implements the intended monotonic, topology-aware crossing model, but serious calibration still requires independent real opening records.
 - The live chart uses a separate literature PALS local-cavity proxy where matched evidence exists.
 - The additive effective-diameter control is a draggable 2–12 Å slider that updates the size line and crossing temperature.
-- The curated evidence contains 48 records, 24 numeric observations, 3 independent papers, 4 polymer series, and 18 live interpolation points.
+- The curated evidence contains 63 records, 39 numeric observations, 4 independent papers, 7 polymer series, and 23 live interpolation points.
 
-Polyether TPU and polycarbonate-PU currently use the generic Tg-anchored scenario because matched numeric temperature-resolved evidence has not been curated.
+Polyether TPU now has a five-point matched PALS proxy curve from 268-338 K. Polycarbonate-PU still uses the generic Tg-anchored scenario because a matched numeric temperature-resolved PALS curve has not been found.
 
 ## Scientific boundary
 
@@ -42,6 +42,6 @@ PALS cavity diameter is a local free-volume proxy, not a connected transport ope
 
 ## Best next task
 
-Curate numeric temperature-resolved polyether TPU and polycarbonate polyurethane PALS or validated MD data with precise figure/table provenance and source reliability boundaries. Keep papers, formulations, and polymer series separate, then regenerate `artifacts/polly-map-pals-proxy.json`, run all tests, and verify the browser provenance text.
+Curate numeric temperature-resolved polycarbonate polyurethane PALS or validated MD data, and seek an independent non-PEG-blended replication of the current polyether series. Record precise figure/table provenance and source reliability boundaries. Keep papers, formulations, and polymer series separate, then regenerate `artifacts/polly-map-pals-proxy.json`, run all tests, and verify the browser provenance text.
 
 The public mirror intentionally excludes confidential invention-disclosure material, raw training data, downloaded papers, extracted page images, virtual environments, credentials, and local configuration.
