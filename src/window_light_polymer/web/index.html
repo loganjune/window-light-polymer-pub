@@ -5,19 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Meet Polly, an interactive guide to thermoplastic and thermoset polyurethane structures."
+      content="Polly is an exploratory polyurethane PALS and free-volume research preview—not a validated leaching predictor."
     />
     <title>Window Light Polymer</title>
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="/" aria-label="Window Light Polymer home">
+      <a class="brand" href="./" aria-label="Window Light Polymer home">
         <span class="brand-mark" aria-hidden="true"></span>
         <span>WINDOW LIGHT <strong>POLYMER</strong></span>
       </a>
-      <span class="status"><i aria-hidden="true"></i>POLLY READY</span>
+      <span class="status"><i aria-hidden="true"></i>RESEARCH PREVIEW</span>
     </header>
+
+    <aside class="research-banner" role="note" aria-label="Research status">
+      <p>
+        <strong>Exploratory PALS/free-volume proxy.</strong>
+        Polly does not predict additive migration, migrated mass, leaching, exposure, or safety.
+      </p>
+    </aside>
 
     <main>
       <section class="hero">
@@ -241,6 +248,24 @@
         </div>
       </section>
 
+      <section class="feedback-section" id="feedback" aria-labelledby="feedback-title">
+        <p class="eyebrow">COLLABORATE ON THE EVIDENCE</p>
+        <div>
+          <h2 id="feedback-title">Challenge the proxy.<br />Help build the validation set.</h2>
+          <div class="feedback-copy">
+            <p>
+              Share a traceable polyurethane PALS or molecular-dynamics dataset, flag a scientific limitation, or propose
+              a reproducible test. Feedback is collected publicly so each claim and correction can be inspected.
+            </p>
+            <div class="feedback-actions">
+              <a class="feedback-primary" href="https://github.com/loganjune/window-light-polymer-pub/issues/new?template=research-feedback.yml" target="_blank" rel="noreferrer">Share research feedback</a>
+              <a href="https://github.com/loganjune/window-light-polymer-pub" target="_blank" rel="noreferrer">Inspect the public repository</a>
+            </div>
+            <small>Do not submit confidential formulations, personal data, or proprietary records.</small>
+          </div>
+        </div>
+      </section>
+
       <section class="comparison-section" aria-labelledby="comparison-title">
         <div class="section-intro">
           <p class="eyebrow">READ THE NETWORK</p>
@@ -306,9 +331,10 @@
     </main>
 
     <footer>
-      <strong>Polly is an educational structure explorer.</strong>
-      Not a formulation, process specification, exposure assessment, or product-safety tool.
+      <strong>Polly is an exploratory PALS/free-volume research preview.</strong>
+      It is not a validated migration or leaching predictor, formulation, process specification, exposure assessment,
+      or product-safety tool.
     </footer>
-    <script src="/app.js" defer></script>
+    <script src="./app.js" defer></script>
   </body>
 </html>

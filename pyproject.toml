@@ -20,6 +20,7 @@ window-light-polymer-fetch = "window_light_polymer.data:main"
 window-light-polymer-train = "window_light_polymer.train:main"
 window-light-polymer-migration-train = "window_light_polymer.migration_train:main"
 window-light-polymer-literature-proxy = "window_light_polymer.literature_proxy_train:main"
+window-light-polymer-static-build = "window_light_polymer.static_site:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

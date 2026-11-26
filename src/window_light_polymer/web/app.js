@@ -1,4 +1,6 @@
 const SVG_NS = "http://www.w3.org/2000/svg";
+const MODEL_CARD_URL = new URL("./data/polly-tg-model-card.json", document.baseURI);
+const MIGRATION_PROXY_URL = new URL("./data/polly-map-pals-proxy.json", document.baseURI);
 
 const modes = {
   thermoplastic: {
@@ -434,8 +436,8 @@ function updateThermalProxy() {
 }
 
 async function loadModelCard() {
-  const response = await fetch("/api/model-card");
-  if (!response.ok) throw new Error("Run window-light-polymer-train to generate the model card.");
+  const response = await fetch(MODEL_CARD_URL);
+  if (!response.ok) throw new Error("Bundled model data are unavailable. Rebuild the static site.");
   const card = await response.json();
   const polyurethane = card.evaluation.polyurethane_ood_test;
   const general = card.evaluation.general_polymer_audit;
@@ -467,8 +469,8 @@ async function loadModelCard() {
 }
 
 async function loadMigrationProxy() {
-  const response = await fetch("/api/polly-map-proxy");
-  if (!response.ok) throw new Error("Run window-light-polymer-literature-proxy to generate the PALS proxy.");
+  const response = await fetch(MIGRATION_PROXY_URL);
+  if (!response.ok) throw new Error("Bundled PALS evidence is unavailable. Rebuild the static site.");
   palsProxyArtifact = await response.json();
 }
 

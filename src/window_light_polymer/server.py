@@ -20,6 +20,8 @@ CONTENT_TYPES = {
 WEB_ASSETS = frozenset({"index.html", "styles.css", "app.js"})
 DEFAULT_MODEL_CARD_PATH = Path("artifacts/polly-tg-model-card.json")
 DEFAULT_MIGRATION_PROXY_PATH = Path("artifacts/polly-map-pals-proxy.json")
+MODEL_CARD_DATA_ROUTE = "/data/polly-tg-model-card.json"
+MIGRATION_PROXY_DATA_ROUTE = "/data/polly-map-pals-proxy.json"
 
 
 def health_payload(model_ready: bool = False, migration_proxy_ready: bool = False) -> dict[str, Any]:
@@ -96,6 +98,24 @@ def make_handler(
             if path == "/favicon.ico":
                 self.send_response(HTTPStatus.NO_CONTENT)
                 self.end_headers()
+                return
+            if path == MODEL_CARD_DATA_ROUTE:
+                if model_card is None:
+                    self.send_json(
+                        {"error": "Bundled model card unavailable. Run window-light-polymer-train."},
+                        HTTPStatus.SERVICE_UNAVAILABLE,
+                    )
+                else:
+                    self.send_json(model_card)
+                return
+            if path == MIGRATION_PROXY_DATA_ROUTE:
+                if migration_proxy is None:
+                    self.send_json(
+                        {"error": "Bundled literature proxy unavailable. Run window-light-polymer-literature-proxy."},
+                        HTTPStatus.SERVICE_UNAVAILABLE,
+                    )
+                else:
+                    self.send_json(migration_proxy)
                 return
             if path == "/api/health":
                 self.send_json(health_payload(model_card is not None, migration_proxy is not None))

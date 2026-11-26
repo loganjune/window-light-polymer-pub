@@ -72,6 +72,20 @@ window-light-polymer
 
 Open <http://127.0.0.1:4175>.
 
+## Static research preview
+
+The public site is built without a Python server. Its deployment validates and bundles the Tg model card and literature
+PALS proxy alongside the browser assets:
+
+```bash
+window-light-polymer-static-build --output _site
+python -m http.server 4176 --directory _site
+```
+
+The interface is explicitly labeled as an exploratory PALS/free-volume proxy, not a validated additive-migration,
+leaching, exposure, or safety model. The site's research-feedback link opens a structured public issue so data
+suggestions and scientific criticism remain reproducible and inspectable.
+
 ## Test
 
 ```bash
@@ -88,6 +102,7 @@ src/window_light_polymer/train.py   reproducible training command
 src/window_light_polymer/migration.py topology-aware opening model and group-conformal crossing intervals
 src/window_light_polymer/migration_train.py POLLY-MAP training command
 src/window_light_polymer/literature_proxy.py curated PALS proxy artifact builder
+src/window_light_polymer/static_site.py validated static-site packager
 src/window_light_polymer/web/       interactive structure explorer
 artifacts/                           model coefficients and complete model card
 research/                            serious-modeling roadmap

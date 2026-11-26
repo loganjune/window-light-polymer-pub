@@ -32,6 +32,8 @@ class ServerTests(unittest.TestCase):
         self.assertIn("Polycaprolactone", page)
         self.assertIn("Loading literature evidence", page)
         self.assertIn("polymer-canvas", page)
+        self.assertIn("Exploratory PALS/free-volume proxy", page)
+        self.assertIn("Share research feedback", page)
 
     def test_generated_model_card_is_loadable(self):
         card = load_model_card(PROJECT_ROOT / "artifacts" / "polly-tg-model-card.json")

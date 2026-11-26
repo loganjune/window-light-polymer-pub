@@ -1,0 +1,40 @@
+name: Research feedback
+description: Suggest traceable data, flag a scientific limitation, or propose a reproducible test for Polly.
+title: "Research feedback: "
+body:
+  - type: dropdown
+    id: feedback-type
+    attributes:
+      label: Feedback type
+      options:
+        - Traceable PALS or molecular-dynamics data
+        - Scientific limitation or correction
+        - Reproducibility problem
+        - Validation-test proposal
+        - Interface or documentation feedback
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: What should Polly's collaborators examine?
+      description: State the observation, limitation, correction, or proposed test as concretely as possible.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Public source or DOI
+      description: Link to a paper, repository, dataset, or protocol when one is available.
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction details
+      description: Include chemistry family, topology, temperatures, units, methods, and expected result when relevant.
+  - type: checkboxes
+    id: public-data
+    attributes:
+      label: Public-submission check
+      options:
+        - label: I have not included confidential formulations, personal data, or proprietary records.
+          required: true

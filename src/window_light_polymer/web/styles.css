@@ -64,6 +64,15 @@ button:focus-visible, select:focus-visible, a:focus-visible { outline: 3px solid
 }
 .status i { width: 7px; height: 7px; border-radius: 50%; background: #278a55; }
 
+.research-banner {
+  padding: 13px 5vw;
+  color: var(--white);
+  background: var(--ink);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+.research-banner p { max-width: 1180px; margin: 0 auto; font-size: 0.875rem; line-height: 1.55; }
+.research-banner strong { color: var(--acid); }
+
 main { overflow: hidden; }
 .hero { max-width: 1180px; margin: 0 auto; padding: 110px 5vw 72px; }
 .eyebrow {
@@ -259,6 +268,17 @@ dd { margin: 0; max-width: 55%; font-size: 0.875rem; font-weight: 800; text-alig
 .next-model { margin-top: 18px; padding: 30px; background: rgba(158, 232, 193, 0.22); border-left: 4px solid var(--ink); display: grid; grid-template-columns: 0.7fr 1.6fr; gap: 32px; }
 .next-model p { margin: 0; line-height: 1.65; }
 
+.feedback-section { max-width: 1080px; margin: 0 auto; padding: 0 5vw 120px; }
+.feedback-section > div { padding: 48px; color: var(--white); background: #26372f; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 7vw; }
+.feedback-section .eyebrow { color: var(--muted); }
+.feedback-section h2 { margin: 0; font-size: clamp(2.6rem, 5vw, 4.4rem); line-height: 0.98; }
+.feedback-copy > p { margin: 0; color: #d3dcd7; line-height: 1.7; }
+.feedback-actions { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 12px; }
+.feedback-actions a { min-height: 46px; padding: 13px 16px; color: var(--white); border: 1px solid rgba(255, 255, 255, 0.35); display: inline-flex; align-items: center; font-size: 0.875rem; font-weight: 800; text-decoration: none; }
+.feedback-actions a:hover { border-color: var(--acid); }
+.feedback-actions .feedback-primary { color: var(--ink); background: var(--acid); border-color: var(--acid); }
+.feedback-copy small { display: block; margin-top: 18px; color: #aebdb5; font-size: 0.8125rem; line-height: 1.5; }
+
 .polymer-diagram .chain-backbone { fill: none; stroke: rgba(24, 35, 30, 0.35); stroke-width: 6; stroke-linecap: round; }
 .polymer-diagram .soft-block { fill: var(--mint); stroke: rgba(24, 35, 30, 0.2); stroke-width: 1; }
 .polymer-diagram .hard-block { fill: var(--ink); }
@@ -315,7 +335,7 @@ footer { padding: 30px 5vw; border-top: 1px solid var(--line); color: var(--mute
 
 @media (max-width: 850px) {
   .hero { padding-top: 72px; }
-  .workspace, .section-intro, .chemistry-copy, .model-intro, .evidence-grid, .thermal-proxy { grid-template-columns: 1fr; }
+  .workspace, .section-intro, .chemistry-copy, .model-intro, .evidence-grid, .thermal-proxy, .feedback-section > div { grid-template-columns: 1fr; }
   .section-intro .eyebrow { grid-column: auto; }
   .result-card { min-height: 560px; }
   .model-stat-grid { grid-template-columns: 1fr; }
@@ -329,6 +349,8 @@ footer { padding: 30px 5vw; border-top: 1px solid var(--line); color: var(--mute
   .topbar { padding: 0 20px; }
   .status { max-width: 145px; overflow: hidden; white-space: nowrap; }
   .hero, .workspace, .chemistry-section, .model-section { padding-left: 20px; padding-right: 20px; }
+  .feedback-section { padding-left: 20px; padding-right: 20px; }
+  .feedback-section > div { padding: 32px 24px; }
   h1 { font-size: clamp(3rem, 15vw, 4.7rem); }
   .card-heading, .viewer-controls { align-items: flex-start; flex-direction: column; }
   .comparison-grid { grid-template-columns: 1fr; }
