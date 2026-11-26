@@ -4,6 +4,8 @@ Window Light Polymer is a source-available research and portfolio project. See [
 
 Meet **Polly**, an interactive, inspectable robot guide to the structural difference between **thermoplastic polyurethane (TPU)** and **thermoset polyurethane**. The project carries forward the visual language of `window-light-scientist` and now includes a deliberately narrow first scientific model: a reproducible polyurethane glass-transition-temperature transfer baseline.
 
+**Live research preview:** <https://loganjune.github.io/window-light-polymer-pub/>
+
 ## What the explorer shows
 
 - Both material families contain urethane linkages, commonly written `—NH—C(=O)—O—`.
